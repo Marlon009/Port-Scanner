@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <curl/curl.h>
+
 
 #ifdef _WIN32
     #include <winsock2.h>
@@ -41,7 +45,11 @@ int scan_port(const char *ip, int port) {
         return 1;  // Retorna 1 se a porta estiver aberta
     } else {
         // Porta está fechada
-        printf("Houve um erro ao se conectar na porta %d: %d\n", port, WSAGetLastError);
+         #ifdef _WIN32
+            printf("Houve um erro ao se conectar na porta %d: %d\n", port, WSAGetLastError());
+        #else
+            printf("Houve um erro ao se conectar na porta %d: %s\n", port, strerror(errno));
+        #endif
         closesocket(sock);
         return 0;  // Retorna 0 se a porta estiver fechada
     }
@@ -62,7 +70,51 @@ int main() {
         }
         printf("Winsock inicializado.\n");
     #endif
-
+        printf(
+        "\n"
+        "                                      .&x                               \n"
+        "                                     &&&&+                              \n"
+        "                      :                  &+                            \n"
+        "                   X&&.                   .x;&                         \n"
+        "                    &.&                    :.X                         \n"
+        "                      &&&                   &X&&        +.. .          \n"
+        "                       &&;&                  & X       .&.&. +         \n"
+        "                        :&.X.               .  $&        &&X&;:        \n"
+        "                          &.&&    &;& &     X  .&     ; .:.&&&&x       \n"
+        "                            &&   ;& &+  $  & : .&    & &  & . $&:      \n"
+        "         ::x                 &+;    .& .  &x+ :&&     &&&&&.X  &$.     \n"
+        "       ++.:+&&&+$             . &;;.:&&x:X.:+    .  &.X:x &;x.&.&+:    \n"
+        "      ;$.X&..x&.x&.          &&:&&&&X &.+     . .& & &&&X&:.. &;;& :   \n"
+        "     &x.&.&X&..X.&;&.&        &&&+&&&&&&;;. $..:  &.&&& ;&;$  .&:.+;   \n"
+        "    &:$:&&&&x&&&&&.&..$:      &&X&x:&&&&&+;. .    &&&X$&;. & $&&$ :.   \n"
+        "    &:&&&&&X&x&&$$&+. &+:&&    &x&&x&&&&&:.. x     &&&&&.:+x&+ ;.&+&   \n"
+        "   ..&&&.&Xx:&&;&&&$.&&&&&&& &;&&&&&&&&&&&.&.;.  . &&&X:&.xx&+&&& .$   \n"
+        "   &.& &:. &&&.&:X&&&&.+&;&&X&&&&&&&&&&&&& : $ ..+ X&&::$;..x& &&..&   \n"
+        "   & &&.X&..+.+.+ &.+&&:.&&:.&&&&&&&&&&&&&&&...    &&&&&+&x.&X&: &..   \n"
+        "   &:X&&&X&x&&&.&&.&:&&x& X:&$&:&&&x;&&&&&&&.: ;.. $.& &x          +   \n"
+        "   $;;X$&&$&&&&&.&X.X+&$;&&:;&&&&$&&&&&&&&X.  & & &.               &   \n"
+        "   $&&+ :.&&.X&X.&&&$.+&:.&$&x$&&&.&&x$&&xX   & &.& .                  \n"
+        "   x&+.+X.&&&. &&;+&&&.&:&.&& ;&&&.   &&::   . .&&+:                   \n"
+        "   .:&..&..;...& &.                  +$&.    .&&&.X+                   \n"
+        "   &x&.x& ; :                        &x    .x .X.+&                    \n"
+        "   XX.&                             &X    &x   &&x$ :                  \n"
+        "   ;X                              .&  .&&     x&:.                    \n"
+        "                                   &&&&&        &+.                    \n"
+        "                                 $:&+&        X&$&                     \n"
+        "                                $.&$x    +&x:&X&.X$                    \n"
+        "                               & .;    &&&&$&&$&x.                     \n"
+        "                              &;&.$&;$;&&&+                            \n"
+        "                             .&&; &&:                                  \n"
+        "                             &$   &&                                    \n"
+        "                           .$;    &                                    \n"
+        "                           X.                                           \n"
+        "                          &.                                            \n"
+        "                          .                                             \n"
+        "                                                                         \n"
+        "                           Falling_Port                                  \n"
+        "                                                                         \n"
+        "                 By: https://github.com/Marlon009\n"  
+         "                                                                         \n" );
     // Entrada do usuário
     printf("Digite o endereço IP ou o domínio a ser escaneado: ");
     scanf("%s", host);
