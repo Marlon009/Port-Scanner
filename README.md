@@ -1,8 +1,7 @@
-Falling_Port - Port Scanner
-
-                                      .&x                               
+<H2>Falling_Port<H2>
+                            .&x                               
                                      &&&&+                              
-                      :                  &+                             
+                      :                  &+                            
                    X&&.                   .x;&                         
                     &.&                    :.X                         
                       &&&                   &X&&        +.. .          
@@ -36,34 +35,71 @@ Falling_Port - Port Scanner
                              &$   &&                                    
                            .$;    &                                    
                            X.                                           
-                          &.                                            
-                          .                                             
-                                                                       
-                           Falling_Port                                 
-                                                                       
-                 By: https://github.com/Marlon009      
+                          &.              
+                          .   
 
-
+                          Falling_Port                                  
+                                                                         
+                 By: https://github.com/Marlon009
+                                                              
 Descrição
 
-O Falling_Port é um scanner de portas simples, escrito em C, que permite aos usuários verificar o estado (aberta/fechada) de portas em um IP ou domínio especificado. Este projeto é útil para realizar análises de rede e segurança, facilitando a verificação do status de portas em um determinado intervalo.
+Falling_Port é um scanner de portas simples desenvolvido em C. Ele permite que você verifique se determinadas portas de um host estão abertas ou fechadas. A ferramenta foi projetada para ser rápida e eficiente, com a capacidade de escanear múltiplas portas simultaneamente.
 Funcionalidades
 
-    Recebe como entrada um IP ou domínio e um intervalo de portas a serem escaneadas.
-    Retorna o status das portas (aberta ou fechada) dentro do intervalo especificado.
-    Compatível com sistemas Windows e Linux.
-Receberá atualizações em breve(como opção de fazer ataque DoS)
+    Verifica portas específicas em um host.
+    Exibe se as portas estão abertas ou fechadas.
+    Interface simples de linha de comando.
 
+Requisitos
+
+    Sistema operacional baseado em Linux.
+    GCC (Compilador de C).
+    Acesso ao terminal com permissões para executar o programa.
+
+Como Compilar
+
+    Clone o repositório:
+
+git clone https://github.com/seu-usuario/Falling_Port.git
+
+Acesse a pasta do projeto:
+
+cd Falling_Port
+
+Compile o código com o GCC:
+
+    gcc -o scanner scanner.c
 
 Como Usar
 
-    Compilação: Compile o programa com o seguinte comando:
+    Após compilar o código, execute o scanner com:
 
-gcc scanner.c -o scanner -lcurl
+./scanner <endereco IP> <porta_inicial> <porta_final>
 
-Execução: Execute o programa com:
+Exemplo:
 
-./scanner
+    ./scanner 192.168.1.1 80 90
 
-Em seguida, insira o IP/domínio e o intervalo de portas que deseja escanear.
+    O scanner irá verificar as portas no intervalo entre a porta inicial e a final fornecida e mostrará os resultados.
 
+Contribuindo
+
+    Faça o fork do repositório.
+    Crie uma branch para a sua feature:
+
+git checkout -b nova-feature
+
+Comite suas alterações:
+
+git commit -am 'Adiciona nova feature'
+
+Faça o push para a branch:
+
+    git push origin nova-feature
+
+    Abra um pull request.
+
+Licença
+
+Este projeto está sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
