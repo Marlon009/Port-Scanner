@@ -33,7 +33,7 @@ gcc -o falling_port falling.c -lpthread -O3
 
 # Windows (MinGW)
 gcc -o falling_port.exe falling.c -lws2_32 -O3
-🛠 Como Usar
+
 Modo Scanner
 bash
 Copy
@@ -41,7 +41,7 @@ Copy
 1. Scan IPv4
 Alvo: example.com
 Porta inicial: 1
-Porta final: 1024
+
 Modo DoS
 bash
 Copy
@@ -49,6 +49,8 @@ Copy
 3. Ataque DoS IPv4
 Alvo: 192.168.1.1
 Porta: 80
+Porta final: 1024
+
 🧩 Funcionalidades
 Scanner de Portas
 Característica	Descrição
@@ -61,6 +63,8 @@ Característica	Descrição
 Método	Flood SYN
 Suporte IP	IPv4 e IPv6
 Intensidade	Máximo possível
+
+
 ⚠️ Aviso Legal
 Este software destina-se exclusivamente para:
 
@@ -88,3 +92,4 @@ Sugerir melhorias
 Adicionar novas funcionalidades
 
 Nota: Mantenha sempre autorização por escrita para qualquer teste em redes de terceiros.
+
