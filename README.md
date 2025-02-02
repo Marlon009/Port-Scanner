@@ -82,11 +82,12 @@ Este software destina-se exclusivamente para:
 📄 Licença
 
 Distribuído sob licença GPL-3.0. Veja o arquivo LICENSE para mais detalhes.
+
 👨💻 Desenvolvedor
+-Marlon 
 
-Marlon - GitHub
+
 🙌 Contribuição
-
 Contribuições são bem-vindas! Abra um issue ou pull request para:
 
     Reportar bugs
