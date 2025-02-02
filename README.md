@@ -53,18 +53,23 @@ Modo DoS
     Alvo: 192.168.1.1
     Porta: 80
 
-🧩 Funcionalidades
-Scanner de Portas
-Característica	Descrição
-Protocolo	TCP SYN
-Suporte IP	IPv4 e IPv6
-Resolução DNS	Automática
-Checksum	Calculado manualmente
-Ataque DoS
-Característica	Descrição
-Método	Flood SYN
-Suporte IP	IPv4 e IPv6
-Intensidade	Máximo possível
+### 🧩 Funcionalidades
+
+#### Scanner de Portas
+| Característica  | Descrição        |
+|-----------------|------------------|
+| **Protocolo**   | TCP SYN          |
+| **Suporte IP**  | IPv4 e IPv6      |
+| **Resolução DNS** | Automática     |
+| **Checksum**    | Calculado manualmente |
+
+#### Ataque DoS
+| Característica  | Descrição        |
+|-----------------|------------------|
+| **Método**      | Flood SYN        |
+| **Suporte IP**  | IPv4 e IPv6      |
+| **Intensidade** | Máximo possível  |
+
 ⚠️ Aviso Legal
 
 Este software destina-se exclusivamente para:
